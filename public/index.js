@@ -42,7 +42,7 @@ sock.on("result", ({link, correct}) => {
     if (!link) {
       alert(`Congratulations your team did it! The link to the coin will be sent to the person who clicked submit.`);
     } else {
-      alert(`Congratulations! Send this password to me!: ${link}`);
+      alert(`Congratulations, you found the password! Screenshot this page and send the picture to me! (Proof: ${link})`);
     }
   } else {
     alert("Wrong password!");
