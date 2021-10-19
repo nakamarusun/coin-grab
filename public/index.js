@@ -18,7 +18,7 @@ const params = new URLSearchParams(window.location.search);
 const roomPar = params.get("room");
 console.log(roomPar);
 // Socket io
-const sock = io("/", {
+const sock = io("", {
   query: {
     room: roomPar,
   }
