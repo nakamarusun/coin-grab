@@ -16,7 +16,7 @@ function initEngine(io) {
     try {
       for (const clientId of io.sockets.adapter.rooms.get(room)) {
           const clientSocket = io.sockets.sockets.get(clientId);
-          const { address } = clientSocket.handshake;
+          const address = sock.handshake.headers["x-real-ip"] || sock.handshake.address;
 
           // Update addresses
           rooms[room].users = [];
@@ -44,9 +44,7 @@ function initEngine(io) {
 
   main.on("connection", (sock) => {
     let { room } = sock.handshake.query;
-    console.log(JSON.stringify(sock.handshake.query));
-    console.log(JSON.stringify(sock.handshake));
-    const { address } = sock.handshake;
+    const address = sock.handshake.headers["x-real-ip"] || sock.handshake.address;
 
     console.log(`connect: ${room}`);
 
