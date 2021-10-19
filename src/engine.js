@@ -105,7 +105,7 @@ function initEngine(io) {
         let found = false;
         for (const ip in rooms[room].owners) {
           const ownArr = rooms[room].owners[ip];
-          if (!ownArr) {
+          if (ownArr) {
             if (ownArr.find((x) => (x === num))) found = true;
           }
         }
