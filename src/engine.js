@@ -16,7 +16,7 @@ function initEngine(io) {
     try {
       for (const clientId of io.sockets.adapter.rooms.get(room)) {
           const clientSocket = io.sockets.sockets.get(clientId);
-          const address = sock.handshake.headers["x-real-ip"] || sock.handshake.address;
+          const address = clientSocket.handshake.headers["x-real-ip"] || clientSocket.handshake.address;
 
           // Update addresses
           rooms[room].users = [];
