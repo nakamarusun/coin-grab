@@ -1,0 +1,34 @@
+<!doctype html>
+<html class="no-js" lang="">
+
+<head>
+  <meta charset="utf-8">
+  <title>Coin Searchers</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="index.css">
+
+  <script src="/socket.io/socket.io.min.js"></script>
+</head>
+
+<body>
+  <div class="header">
+    <h1>Coin Searchers</h1>
+    <h3>Invite your friends here by sending them this link:</h3>
+    <h4 id="linkcopy"></h4>
+    <div>
+      <label>Enter the right password here to get my coin. You can get the password by completing the puzzle. Good luck:</label>
+      <br>
+      <input id="codetext" type="text">
+      <input id="submitcode" type="button" value="Submit">
+    </div>
+    <h1>FRIENDSHIP SCORE: <span id="joined">0</span> / 5</h1>
+  </div>
+  <div id="boxes"></div>
+  <script>
+    const strings = [];
+  </script>
+  <script src="index.js"></script>
+</body>
+
+</html>
