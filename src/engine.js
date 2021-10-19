@@ -18,6 +18,8 @@ function initEngine(io) {
           const clientSocket = io.sockets.sockets.get(clientId);
           const address = clientSocket.handshake.headers["x-real-ip"] || clientSocket.handshake.address;
 
+          console.log(`BruhBruh: ${rooms[room].users}`);
+
           // Update addresses
           rooms[room].users = [];
           if (!rooms[room].users.find( (x) => (x === address) )) {
