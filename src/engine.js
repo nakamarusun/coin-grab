@@ -16,7 +16,7 @@ function initEngine(io) {
     try {
       // Update addresses
       rooms[room].users = [];
-      
+
       for (const clientId of io.sockets.adapter.rooms.get(room)) {
           const clientSocket = io.sockets.sockets.get(clientId);
           const address = clientSocket.handshake.headers["x-real-ip"] || clientSocket.handshake.address;
@@ -109,7 +109,8 @@ function initEngine(io) {
             if (ownArr.find((x) => (x === num))) found = true;
           }
         }
-        if (!found) nums.push(num)
+        if (found) continue;
+        nums.push(num);
       }
       rooms[room].owners[address] = nums;
     }
