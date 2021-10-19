@@ -44,7 +44,9 @@ function initEngine(io) {
 
   main.on("connection", (sock) => {
     let { room } = sock.handshake.query;
-    const { address } = sock.handshake
+    console.log(JSON.stringify(sock.handshake.query));
+    console.log(JSON.stringify(sock.handshake));
+    const { address } = sock.handshake;
 
     console.log(`connect: ${room}`);
 
