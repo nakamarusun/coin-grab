@@ -101,15 +101,16 @@ function initEngine(io) {
       const nums = [];
       while (nums.length < 2) {
         const num = randomRange(0, 9);
-        if (nums.find((x) => (x === num))) continue;
+        console.log(`generated ${num}`);
+        if (nums.find((x) => (x === num))) { console.log("same as in nums");continue;}
         let found = false;
         for (const ip in rooms[room].owners) {
           const ownArr = rooms[room].owners[ip];
           if (ownArr) {
-            if (ownArr.find((x) => (x === num))) found = true;
+            if (ownArr.find((x) => {console.log(`match with ${x}`);return x === num})) found = true;
           }
         }
-        if (found) continue;
+        if (found) {console.log(`Failed`);continue;}
         nums.push(num);
       }
       rooms[room].owners[address] = nums;
