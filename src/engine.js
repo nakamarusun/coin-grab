@@ -49,7 +49,7 @@ function initEngine(io) {
     console.log(`connect: ${room}`);
 
     // Create room
-    if (!room) {
+    if (!room || room === "null" || room === "undefined") {
       room = generateString(8);
       console.log(`Generate room ${room}`);
     } else {

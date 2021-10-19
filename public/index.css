@@ -49,7 +49,7 @@ button {
   background-color: red;
 }
 
-#boxes div:active {
+#boxes div:hover {
   color: #000000ff;
   background-color: #00000000 !important;
 }
