@@ -107,7 +107,7 @@ function initEngine(io) {
         for (const ip in rooms[room].owners) {
           const ownArr = rooms[room].owners[ip];
           if (ownArr) {
-            if (rooms[room].owners[ip].find((x) => {console.log(`match with ${x}`);return x === num}) !== undefined) found = true;
+            if (rooms[room].owners[ip].find((x) => {console.log(`match with ${x}`);return x === num}) !== undefined) found = true; // Very dangerous, fixed now.
           }
         }
         if (found) {console.log(`Failed`);continue;}
