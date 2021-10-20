@@ -47,13 +47,13 @@ function initEngine(io) {
       rooms[room].users = [];
 
       for (const clientId of io.sockets.adapter.rooms.get(room)) {
-          const clientSocket = io.sockets.sockets.get(clientId);
-          const address = clientSocket.handshake.headers["x-real-ip"] || clientSocket.handshake.address;
+        const clientSocket = io.sockets.sockets.get(clientId);
+        const address = clientSocket.handshake.headers["x-real-ip"] || clientSocket.handshake.address;
 
-          if (!rooms[room].users.find( (x) => (x === address) )) {
-            rooms[room].users.push(address);
-          }
+        if (!rooms[room].users.find( (x) => (x === address) )) {
+          rooms[room].users.push(address);
         }
+      }
 
       // Send update broadcast
       main.to(room).emit("update", {
@@ -67,7 +67,7 @@ function initEngine(io) {
           delete rooms[room].owners[x];
         }
       });
-      log(`Now room ${chalk.magenta(room)} with pass ${chalk.cyan(rooms[room].password)} has ${rooms[room].owners.length} clients with:\n  ${JSON.stringify(rooms[room].owners)}`);
+      log(`Now room ${chalk.magenta(room)} with pass ${chalk.cyan(rooms[room].password)} has ${rooms[room].users.length} clients with:\n  ${JSON.stringify(rooms[room].owners)}`);
     } catch(e) {
       log(`Error: ${e}`);
     }

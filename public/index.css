@@ -53,3 +53,8 @@ button {
   color: #000000ff;
   background-color: #00000000 !important;
 }
+
+#boxes div:active {
+  color: #000000ff;
+  background-color: #00000000 !important;
+}
