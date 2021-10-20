@@ -10,7 +10,7 @@
   "author": "jason",
   "license": "MIT",
   "dependencies": {
-    "ejs": "^3.1.6",
+    "chalk": "^4.1.2",
     "express": "^4.17.1",
     "socket.io": "^4.3.1"
   }

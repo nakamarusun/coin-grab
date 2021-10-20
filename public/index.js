@@ -63,6 +63,10 @@ sock.on("puzzle", ({letters}) => {
   }
 });
 
+sock.on("alert", ({msg}) => {
+  alert(msg);
+});
+
 document.getElementById("submitcode").addEventListener("click", () => {
   sock.emit("submitcode", {
     code: document.getElementById("codetext").value,
